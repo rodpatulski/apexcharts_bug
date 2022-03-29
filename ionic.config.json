@@ -1,0 +1,7 @@
+{
+  "name": "test_rendering",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
