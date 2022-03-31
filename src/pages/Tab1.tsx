@@ -22,9 +22,7 @@ const Tab1: React.FC = () => {
       }
     ]
   };
-
-  const [currentState, setState] = useState(initialData);
-
+  
   return (
     <IonPage>
       <IonHeader>
@@ -38,7 +36,7 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Chart options={currentState.options} series={currentState.series} type="bar" />
+        <Chart options={initialData.options} series={initialData.series} type="bar" />
       </IonContent>
     </IonPage>
   );
