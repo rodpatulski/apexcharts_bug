@@ -1,8 +1,30 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
+import { useState } from 'react';
+import Chart from "react-apexcharts";
 
 const Tab2: React.FC = () => {
+
+  const initialData = {
+    options: {
+      chart: {
+        id: "basic-bar2"
+      },
+      xaxis: {
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+      }
+    },
+    series: [
+      {
+        name: "series-1",
+        data: [130, 40, 45, 50, 49, 60, 70, 91]
+      }
+    ]
+  };
+
+  const [currentState, setState] = useState(initialData);
+  
   return (
     <IonPage>
       <IonHeader>
@@ -16,7 +38,7 @@ const Tab2: React.FC = () => {
             <IonTitle size="large">Tab 2</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+        <Chart options={currentState.options} series={currentState.series} type="bar" />
       </IonContent>
     </IonPage>
   );
